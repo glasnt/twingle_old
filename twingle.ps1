@@ -14,7 +14,7 @@
 #
 ##############################################################################
 
-$env:PSModulePath = $env:PSModulePath + ";c:\anchor\scripts\twingle\lib"; 
+$env:PSModulePath = $env:PSModulePath + ";c:\twingle\lib"; 
 Import-Module twingle; $ini = Parse_IniFile; $twingleDir = twingledir
 
 # Skip straight to setup if required
