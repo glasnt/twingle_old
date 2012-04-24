@@ -173,7 +173,7 @@ function schedule_task ($name, $type, $day, $time, $action ) {
 		#$name - freeform 
 		#$day/$time - ignore for OnStart
 		
-		if ($type -eq "ONSTART") { $timing = ""; }
+		if ($type -eq "ONSTART") { $timing = "/RU SYSTEM"; }
 		if ($type -eq "ONCE") {  $timing = "/sd $day /st $time"; if ($day.length -le 10) { $day = "0"+$day}}	
 		if ($type -eq "WEEKLY") {  $timing =  "/d $day /st $time";  }
 		
