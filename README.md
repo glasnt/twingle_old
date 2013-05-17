@@ -4,14 +4,14 @@ Twingle is a windows implementation of [Tingle][]. It tries to replicate the ori
 
 # Overview
 
-You have Windows Updates, right? They can be automatically run on a weekly basis, or they can be run to only download things, pending user confirmation of installation. With Twingle, you (should, ideally), be able to schedule updates for as often as you want, and get some feedback out of your server as the process occurs. 
+You have Windows Updates, right? They can be automatically run on a weekly basis, or they can be run to only download things, pending user confirmation of installation. With Twingle, you (should, ideally) be able to schedule updates for as often as you want, and get some feedback out of your server as the process occurs. 
 
 # Features
 
 Some things twingle can do for you:
  - automated installation: just say what day/time of the week you want installs, and twingle does the rest!
   - but you can still customize the installation
- - notify a robot for humanoid about pending installations
+ - notify a robot or humanoid about pending installations
  - installs all, or only important updates
  - notifies any logged in users about pending installations
  - cleans up after itself, just like a toilet-trained puppy!
@@ -37,11 +37,13 @@ This code is currently very much beta. It is a work in progress, and it's writte
 
 Two areas of the code that require customisation from the installer are the `email` and `nagios` hooks. Just search for `CUSTOMISE THIS YOURSELF!` to have a squizz at what needs to be changed. 
 
-# Change List 
+# The Config.ini File
 
-* 0.2.0 : "Stable SP1" release, nothing should actually break. A few bug fixes, but should be OK.
-* 0.1.0 : "Stable" release, that actually does a lot of nice things.
-* 0.0.1 : Inital commit to public repo. Stripped version of working code, still horrid and full of swearwords. 
-
+There are a few options for this file: 
+ * InstallDay: [MON|TUE|WED|THU]  - if you update on a Friday, you're in for a bad time. 
+ * InstallTime: (just a 24h time)
+ * RebootTime: either a time, or one of the following options: 
+   * NOW: "immediately" after installs have finished (a net send msg will be sent to logged in users giving a few minutes warning)
+   * NONE: the system will not be restarted. A notification will be send to a human to explain this. 
 
 [Tingle]: http://github.com/anchor/tingle

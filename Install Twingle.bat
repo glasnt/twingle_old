@@ -1,1 +1,0 @@
-powershell C:\twingle\twingle.ps1 -setup
